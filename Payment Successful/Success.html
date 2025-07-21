@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Payment Successful</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f8ff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #28a745;
+      font-size: 28px;
+    }
+
+    p {
+      font-size: 16px;
+      color: #333;
+      margin: 15px 0;
+    }
+
+    .link-button {
+      display: inline-block;
+      padding: 12px 20px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      margin-top: 15px;
+      transition: background-color 0.3s ease;
+    }
+
+    .link-button:hover {
+      background-color: #0056b3;
+    }
+
+    .copy-btn {
+      margin-top: 10px;
+      padding: 10px 16px;
+      font-size: 14px;
+      background-color: #6c757d;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .copy-btn:hover {
+      background-color: #5a6268;
+    }
+
+    .note {
+      color: #ff0000;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    .support {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .link-text {
+      word-break: break-all;
+      font-size: 14px;
+      background: #f4f4f4;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 6px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>✅ Payment Successful!</h1>
+    <p>Thank you for your purchase.</p>
+    <p>You can now access your course materials below:</p>
+
+    <a class="link-button" 
+       href="https://drive.google.com/drive/folders/1UJ-5B-mcxGcMOqDPK2zzOHiRKgaYdycE?usp=drive_link" 
+       target="_blank">
+      Access Course Now
+    </a>
+
+    <div class="link-text" id="courseLink">
+      https://drive.google.com/drive/folders/1UJ-5B-mcxGcMOqDPK2zzOHiRKgaYdycE?usp=drive_link
+    </div>
+    <button class="copy-btn" onclick="copyLink()">📋 Copy Link</button>
+
+    <p class="note">⚠️ Please copy and save this link now. It may not be shown again.</p>
+  </div>
+
+  <script>
+    function copyLink() {
+      const linkText = document.getElementById("courseLink").innerText;
+      navigator.clipboard.writeText(linkText).then(function () {
+        alert("Course link copied to clipboard!");
+      }, function (err) {
+        alert("Failed to copy link: " + err);
+      });
+    }
+  </script>
+
+</body>
+</html>
